@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- IHttpClientFactory only. The named client + resilience pipeline are configured by the host. -->
+    <PackageReference Include="Microsoft.Extensions.Http" Version="10.*" />
+    <!-- ILogger<T> — abstractions only; the implementation is provided by the host. -->
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.*" />
+    <!-- IMemoryCache — abstractions only; AddMemoryCache() in the host provides the implementation. -->
+    <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="10.*" />
+    <!-- IOptions<T> used directly by CachingPeopleService; declared explicitly, not via transitive dep. -->
+    <PackageReference Include="Microsoft.Extensions.Options" Version="10.*" />
+  </ItemGroup>
+
+</Project>
